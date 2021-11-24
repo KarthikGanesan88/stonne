@@ -10,3 +10,4 @@ Please make sure to checkout the original repo for the full details and be sure 
 
 1. Removed `pytorch-frontend` folder and moved just the 2 modified files `SimulatedConv.py` and `SimulatedLinear.py` into a new folder `pytorch_stonne`. 
 2. Modified the paths in all files to work with current directory structure. 
+3. Wrote a small function to automatically replace regular `conv2d` and `linear` layers with simulated ones with matching sizes. If you want to run the network in PyTorch to get accuracy, you can quickly copy the network, replace layers and also run it via stonne.
