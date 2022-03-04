@@ -1,7 +1,8 @@
 import torch
 import torch.nn as nn
 from convert_model import create_sim_model_copy
-import pdb
+
+torch.manual_seed(0)
 
 class Net(nn.Module):
     def __init__(self):
@@ -23,7 +24,6 @@ class Net(nn.Module):
 device = torch.device('cpu')
 
 net = Net().cpu()
-# print(net)
 input_test = torch.randn(1, 1, 10, 10)
 print('Basic conv', net(input_test))
 
