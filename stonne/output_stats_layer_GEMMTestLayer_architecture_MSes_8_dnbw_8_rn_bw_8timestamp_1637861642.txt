@@ -1,0 +1,1112 @@
+{
+    "hardwareConfiguration" : {
+        "print_stats_enabled" : 1,
+        "DSNetwork" : {
+            "n_switches_traversed_by_cycle" : 23
+        },
+        "DSwitch" : {
+            "latency" : 1,
+            "input_ports" : 1,
+            "output_ports" : 2,
+            "port_width" : 16
+        },
+        "MSNetwork" : {
+            "multiplier_network_type" : "LINEAR",
+            "ms_rows" : 0,
+            "ms_columns" : 0,
+            "ms_size" : 8
+        },
+        "MSwitch" : {
+            "latency" : 1,
+            "input_ports" : 1,
+            "output_ports" : 1,
+            "forwarding_ports" : 1,
+            "port_width" : 16,
+            "buffers_capacity" : 2048
+        },
+        "ReduceNetwork" : {
+            "reduce_network_type" : "ASNETWORK",
+            "accumulation_buffer_enabled" : 0
+        },
+        "ASwitch" : {
+            "latency" : 1,
+            "input_ports" : 2,
+            "output_ports" : 1,
+            "forwarding_ports" : 1,
+            "port_width" : 16,
+            "buffers_capacity" : 256
+        },
+        "LookUpTable" : {
+            "latency" : 1,
+            "port_width" : 1
+        },
+        "SDMemory" : {
+            "mem_controller_type" : "SIGMA_SPARSE_GEMM",
+            "write_buffers_capacity" : 256,
+            "dn_bw" : 8,
+            "rn_bw" : 8,
+            "port_width" : 16
+        }
+    },
+    "LayerConfiguration" : {
+        "Layer_Type" : 3,
+        "R" : 1,
+        "S" : 256,
+        "C" : 1,
+        "K" : 4,
+        "G" : 1,
+        "N" : 1,
+        "X" : 4,
+        "Y" : 256,
+        "X_" : 4,
+        "Y_" : 1
+    },
+    "ASNetworkConfiguration" : {
+        "ASwitchConfiguration" : [
+            [
+                {
+                    "Configuration" : "ADD_2_1",
+                    "Augmented_link_enabled" : 0,
+                    "Augmented_link_direction" : "NOT_CONFIGURED",
+                    "Left_child_enabled" : 1,
+                    "Right_child_enabled" : 0,
+                    "BusID" : 2,
+                    "InputID" : 1,
+                    "Send_result_to_memory" : 1
+                }
+            ],
+            [
+                {
+                    "Configuration" : "ADD_2_1",
+                    "Augmented_link_enabled" : 0,
+                    "Augmented_link_direction" : "NOT_CONFIGURED",
+                    "Left_child_enabled" : 1,
+                    "Right_child_enabled" : 1,
+                    "BusID" : 3,
+                    "InputID" : 1,
+                    "Send_result_to_memory" : 1
+                },
+                {
+                    "Configuration" : "ADD_2_1",
+                    "Augmented_link_enabled" : 0,
+                    "Augmented_link_direction" : "NOT_CONFIGURED",
+                    "Left_child_enabled" : 0,
+                    "Right_child_enabled" : 0,
+                    "BusID" : 4,
+                    "InputID" : 1,
+                    "Send_result_to_memory" : 0
+                }
+            ],
+            [
+                {
+                    "Configuration" : "ADD_2_1",
+                    "Augmented_link_enabled" : 0,
+                    "Augmented_link_direction" : "NOT_CONFIGURED",
+                    "Left_child_enabled" : 1,
+                    "Right_child_enabled" : 1,
+                    "BusID" : 5,
+                    "InputID" : 1,
+                    "Send_result_to_memory" : 0
+                },
+                {
+                    "Configuration" : "ADD_3_1",
+                    "Augmented_link_enabled" : 1,
+                    "Augmented_link_direction" : "RECEIVE",
+                    "Left_child_enabled" : 1,
+                    "Right_child_enabled" : 1,
+                    "BusID" : 0,
+                    "InputID" : 0,
+                    "Send_result_to_memory" : 0
+                },
+                {
+                    "Configuration" : "ADD_2_1",
+                    "Augmented_link_enabled" : 1,
+                    "Augmented_link_direction" : "SEND",
+                    "Left_child_enabled" : 1,
+                    "Right_child_enabled" : 0,
+                    "BusID" : 0,
+                    "InputID" : 1,
+                    "Send_result_to_memory" : 0
+                },
+                {
+                    "Configuration" : "ADD_2_1",
+                    "Augmented_link_enabled" : 0,
+                    "Augmented_link_direction" : "NOT_CONFIGURED",
+                    "Left_child_enabled" : 0,
+                    "Right_child_enabled" : 0,
+                    "BusID" : 6,
+                    "InputID" : 1,
+                    "Send_result_to_memory" : 0
+                }
+            ]
+        ]
+    },
+    "MSNetworkConfiguration" : {
+        "MSwitchConfiguration" : [
+            {
+                "VN" : 0
+            },
+            {
+                "VN" : 0
+            },
+            {
+                "VN" : 0
+            },
+            {
+                "VN" : 0
+            },
+            {
+                "VN" : 0
+            },
+            {
+                "VN" : -1
+            },
+            {
+                "VN" : -1
+            },
+            {
+                "VN" : -1
+            }
+        ]
+    },
+    "GlobalStats" : {
+        "N_cycles" : 360
+    },
+    "DSNetworkStats" : {
+        "DSTreeStats" : [
+            {
+                "DSwitchStats" : [
+                ]
+            },
+            {
+                "DSwitchStats" : [
+                ]
+            },
+            {
+                "DSwitchStats" : [
+                ]
+            },
+            {
+                "DSwitchStats" : [
+                ]
+            },
+            {
+                "DSwitchStats" : [
+                ]
+            },
+            {
+                "DSwitchStats" : [
+                ]
+            },
+            {
+                "DSwitchStats" : [
+                ]
+            },
+            {
+                "DSwitchStats" : [
+                ]
+            }
+        ]
+    },
+    "MSNetworkStats" : {
+        "MSwitchStats" : [
+            {
+                "Total_cycles" : 360,
+                "Idle_cycles" : 228,
+                "N_multiplications" : 16,
+                "N_input_forwardings_send" : 0,
+                "N_input_forwardings_receive" : 0,
+                "N_inputs_receive_from_memory" : 16,
+                "N_weights_receive_from_memory" : 4,
+                "N_weight_fifo_flush" : 0,
+                "N_psums_receive" : 116,
+                "N_psum_forwarding_send" : 116,
+                "N_configurations" : 33
+                ,"ActivationFifo" : {
+                    "N_pops" : 132,
+                    "N_pushes" : 132,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "WeightFifo" : {
+                    "N_pops" : 20,
+                    "N_pushes" : 20,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "PsumFifo" : {
+                    "N_pops" : 132,
+                    "N_pushes" : 132,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "ForwardingInputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                },
+                "ForwardingOutputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                }
+            },
+            {
+                "Total_cycles" : 360,
+                "Idle_cycles" : 228,
+                "N_multiplications" : 132,
+                "N_input_forwardings_send" : 0,
+                "N_input_forwardings_receive" : 0,
+                "N_inputs_receive_from_memory" : 132,
+                "N_weights_receive_from_memory" : 33,
+                "N_weight_fifo_flush" : 0,
+                "N_psums_receive" : 0,
+                "N_psum_forwarding_send" : 0,
+                "N_configurations" : 33
+                ,"ActivationFifo" : {
+                    "N_pops" : 132,
+                    "N_pushes" : 132,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "WeightFifo" : {
+                    "N_pops" : 164,
+                    "N_pushes" : 165,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "PsumFifo" : {
+                    "N_pops" : 132,
+                    "N_pushes" : 132,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "ForwardingInputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                },
+                "ForwardingOutputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                }
+            },
+            {
+                "Total_cycles" : 360,
+                "Idle_cycles" : 232,
+                "N_multiplications" : 128,
+                "N_input_forwardings_send" : 0,
+                "N_input_forwardings_receive" : 0,
+                "N_inputs_receive_from_memory" : 128,
+                "N_weights_receive_from_memory" : 32,
+                "N_weight_fifo_flush" : 0,
+                "N_psums_receive" : 0,
+                "N_psum_forwarding_send" : 0,
+                "N_configurations" : 32
+                ,"ActivationFifo" : {
+                    "N_pops" : 128,
+                    "N_pushes" : 128,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "WeightFifo" : {
+                    "N_pops" : 159,
+                    "N_pushes" : 160,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "PsumFifo" : {
+                    "N_pops" : 128,
+                    "N_pushes" : 128,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "ForwardingInputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                },
+                "ForwardingOutputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                }
+            },
+            {
+                "Total_cycles" : 360,
+                "Idle_cycles" : 236,
+                "N_multiplications" : 124,
+                "N_input_forwardings_send" : 0,
+                "N_input_forwardings_receive" : 0,
+                "N_inputs_receive_from_memory" : 124,
+                "N_weights_receive_from_memory" : 31,
+                "N_weight_fifo_flush" : 0,
+                "N_psums_receive" : 0,
+                "N_psum_forwarding_send" : 0,
+                "N_configurations" : 31
+                ,"ActivationFifo" : {
+                    "N_pops" : 124,
+                    "N_pushes" : 124,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "WeightFifo" : {
+                    "N_pops" : 154,
+                    "N_pushes" : 155,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "PsumFifo" : {
+                    "N_pops" : 124,
+                    "N_pushes" : 124,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "ForwardingInputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                },
+                "ForwardingOutputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                }
+            },
+            {
+                "Total_cycles" : 360,
+                "Idle_cycles" : 236,
+                "N_multiplications" : 124,
+                "N_input_forwardings_send" : 0,
+                "N_input_forwardings_receive" : 0,
+                "N_inputs_receive_from_memory" : 124,
+                "N_weights_receive_from_memory" : 31,
+                "N_weight_fifo_flush" : 0,
+                "N_psums_receive" : 0,
+                "N_psum_forwarding_send" : 0,
+                "N_configurations" : 31
+                ,"ActivationFifo" : {
+                    "N_pops" : 124,
+                    "N_pushes" : 124,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "WeightFifo" : {
+                    "N_pops" : 154,
+                    "N_pushes" : 155,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "PsumFifo" : {
+                    "N_pops" : 124,
+                    "N_pushes" : 124,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "ForwardingInputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                },
+                "ForwardingOutputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                }
+            },
+            {
+                "Total_cycles" : 360,
+                "Idle_cycles" : 244,
+                "N_multiplications" : 116,
+                "N_input_forwardings_send" : 0,
+                "N_input_forwardings_receive" : 0,
+                "N_inputs_receive_from_memory" : 116,
+                "N_weights_receive_from_memory" : 29,
+                "N_weight_fifo_flush" : 0,
+                "N_psums_receive" : 0,
+                "N_psum_forwarding_send" : 0,
+                "N_configurations" : 29
+                ,"ActivationFifo" : {
+                    "N_pops" : 116,
+                    "N_pushes" : 116,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "WeightFifo" : {
+                    "N_pops" : 145,
+                    "N_pushes" : 145,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "PsumFifo" : {
+                    "N_pops" : 116,
+                    "N_pushes" : 116,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "ForwardingInputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                },
+                "ForwardingOutputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                }
+            },
+            {
+                "Total_cycles" : 360,
+                "Idle_cycles" : 244,
+                "N_multiplications" : 116,
+                "N_input_forwardings_send" : 0,
+                "N_input_forwardings_receive" : 0,
+                "N_inputs_receive_from_memory" : 116,
+                "N_weights_receive_from_memory" : 29,
+                "N_weight_fifo_flush" : 0,
+                "N_psums_receive" : 0,
+                "N_psum_forwarding_send" : 0,
+                "N_configurations" : 29
+                ,"ActivationFifo" : {
+                    "N_pops" : 116,
+                    "N_pushes" : 116,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "WeightFifo" : {
+                    "N_pops" : 145,
+                    "N_pushes" : 145,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "PsumFifo" : {
+                    "N_pops" : 116,
+                    "N_pushes" : 116,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "ForwardingInputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                },
+                "ForwardingOutputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                }
+            },
+            {
+                "Total_cycles" : 360,
+                "Idle_cycles" : 244,
+                "N_multiplications" : 116,
+                "N_input_forwardings_send" : 0,
+                "N_input_forwardings_receive" : 0,
+                "N_inputs_receive_from_memory" : 116,
+                "N_weights_receive_from_memory" : 29,
+                "N_weight_fifo_flush" : 0,
+                "N_psums_receive" : 0,
+                "N_psum_forwarding_send" : 0,
+                "N_configurations" : 29
+                ,"ActivationFifo" : {
+                    "N_pops" : 116,
+                    "N_pushes" : 116,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "WeightFifo" : {
+                    "N_pops" : 145,
+                    "N_pushes" : 145,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "PsumFifo" : {
+                    "N_pops" : 116,
+                    "N_pushes" : 116,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 1
+                },
+                "ForwardingInputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                },
+                "ForwardingOutputFifo" : {
+                    "N_pops" : 0,
+                    "N_pushes" : 0,
+                    "N_fronts" : 0,
+                    "Max_occupancy" : 0
+                }
+            }
+        ]
+    },
+    "ASNetworkStats" : {
+        "ASwitchStats" : [
+            [
+                {
+                    "Total_cycles" : 360,
+                    "Idle_cycles" : 244,
+                    "N_2_1_sums" : 116,
+                    "N_2_1_comps" : 0,
+                    "N_3_1_sums" : 0,
+                    "N_3_1_comps" : 0,
+                    "N_parent_send" : 0,
+                    "N_augmentendLink_send" : 0,
+                    "N_memory_send" : 116,
+                    "N_configurations" : 33
+                    ,"InputPsumLeftFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "InputPsumRightFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputPsumFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    "InputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                }
+            ],
+            [
+                {
+                    "Total_cycles" : 360,
+                    "Idle_cycles" : 232,
+                    "N_2_1_sums" : 128,
+                    "N_2_1_comps" : 0,
+                    "N_3_1_sums" : 0,
+                    "N_3_1_comps" : 0,
+                    "N_parent_send" : 116,
+                    "N_augmentendLink_send" : 0,
+                    "N_memory_send" : 12,
+                    "N_configurations" : 33
+                    ,"InputPsumLeftFifo" : {
+                        "N_pops" : 128,
+                        "N_pushes" : 128,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 2
+                    },
+                    "InputPsumRightFifo" : {
+                        "N_pops" : 128,
+                        "N_pushes" : 128,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputPsumFifo" : {
+                        "N_pops" : 128,
+                        "N_pushes" : 128,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    "InputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                },
+                {
+                    "Total_cycles" : 360,
+                    "Idle_cycles" : 244,
+                    "N_2_1_sums" : 116,
+                    "N_2_1_comps" : 0,
+                    "N_3_1_sums" : 0,
+                    "N_3_1_comps" : 0,
+                    "N_parent_send" : 116,
+                    "N_augmentendLink_send" : 0,
+                    "N_memory_send" : 0,
+                    "N_configurations" : 29
+                    ,"InputPsumLeftFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "InputPsumRightFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputPsumFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    "InputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                }
+            ],
+            [
+                {
+                    "Total_cycles" : 360,
+                    "Idle_cycles" : 228,
+                    "N_2_1_sums" : 132,
+                    "N_2_1_comps" : 0,
+                    "N_3_1_sums" : 0,
+                    "N_3_1_comps" : 0,
+                    "N_parent_send" : 128,
+                    "N_augmentendLink_send" : 0,
+                    "N_memory_send" : 4,
+                    "N_configurations" : 33
+                    ,"InputPsumLeftFifo" : {
+                        "N_pops" : 132,
+                        "N_pushes" : 132,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "InputPsumRightFifo" : {
+                        "N_pops" : 132,
+                        "N_pushes" : 132,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputPsumFifo" : {
+                        "N_pops" : 132,
+                        "N_pushes" : 132,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    "InputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                },
+                {
+                    "Total_cycles" : 360,
+                    "Idle_cycles" : 236,
+                    "N_2_1_sums" : 116,
+                    "N_2_1_comps" : 0,
+                    "N_3_1_sums" : 8,
+                    "N_3_1_comps" : 0,
+                    "N_parent_send" : 128,
+                    "N_augmentendLink_send" : 0,
+                    "N_memory_send" : 0,
+                    "N_configurations" : 32
+                    ,"InputPsumLeftFifo" : {
+                        "N_pops" : 128,
+                        "N_pushes" : 128,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 2
+                    },
+                    "InputPsumRightFifo" : {
+                        "N_pops" : 124,
+                        "N_pushes" : 124,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 2
+                    },
+                    "OutputPsumFifo" : {
+                        "N_pops" : 128,
+                        "N_pushes" : 128,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    "InputForwardingFifo" : {
+                        "N_pops" : 8,
+                        "N_pushes" : 8,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    }
+                },
+                {
+                    "Total_cycles" : 360,
+                    "Idle_cycles" : 244,
+                    "N_2_1_sums" : 116,
+                    "N_2_1_comps" : 0,
+                    "N_3_1_sums" : 0,
+                    "N_3_1_comps" : 0,
+                    "N_parent_send" : 116,
+                    "N_augmentendLink_send" : 8,
+                    "N_memory_send" : 0,
+                    "N_configurations" : 31
+                    ,"InputPsumLeftFifo" : {
+                        "N_pops" : 124,
+                        "N_pushes" : 124,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "InputPsumRightFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputPsumFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputForwardingFifo" : {
+                        "N_pops" : 8,
+                        "N_pushes" : 8,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "InputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                },
+                {
+                    "Total_cycles" : 360,
+                    "Idle_cycles" : 244,
+                    "N_2_1_sums" : 116,
+                    "N_2_1_comps" : 0,
+                    "N_3_1_sums" : 0,
+                    "N_3_1_comps" : 0,
+                    "N_parent_send" : 116,
+                    "N_augmentendLink_send" : 0,
+                    "N_memory_send" : 0,
+                    "N_configurations" : 29
+                    ,"InputPsumLeftFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "InputPsumRightFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputPsumFifo" : {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    },
+                    "OutputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    "InputForwardingFifo" : {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                }
+            ]
+        ]
+    },
+    "SDMemoryStats" : {
+        "Total_cycles" : 360,
+        "N_SRAM_weight_reads" : 218,
+        "N_SRAM_input_reads" : 3568,
+        "N_SRAM_psum_reads" : 116,
+        "N_SRAM_psum_writes" : 132,
+        "Dataflow" : "MK_STA_KN_STR",
+        "STA_sparsity" : 78,
+        "STR_sparsity" : 12,
+        "STA_vectors_at_once_avg" : 1,
+        "STA_vectors_at_once_max" : 1,
+        "N_reconfigurations" : 33,
+        "N_SRAM_read_ports_weights_use" : [
+            4,
+            33,
+            32,
+            31,
+            31,
+            29,
+            29,
+            29
+        ],
+        "N_SRAM_read_ports_inputs_use" : [
+            16,
+            132,
+            128,
+            124,
+            124,
+            116,
+            116,
+            116
+        ],
+        "N_SRAM_read_ports_psums_use" : [
+            116,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ],
+        "N_SRAM_write_ports_use" : [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+        ]
+    },
+    "CollectionBusStats" : {
+        "CollectionBusLineStats" : [
+            {
+                "Total_cycles" : 360,
+                "N_Times_conflicts" : 0,
+                "N_Conflicts_Average" : 0,
+                "N_sends" : 0,
+                "n_inputs_receive" : [
+                    0,
+                    0
+                ]
+                ,"input_fifos_stats" : [
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                ]
+            },
+            {
+                "Total_cycles" : 360,
+                "N_Times_conflicts" : 0,
+                "N_Conflicts_Average" : 0,
+                "N_sends" : 0,
+                "n_inputs_receive" : [
+                    0,
+                    0
+                ]
+                ,"input_fifos_stats" : [
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                ]
+            },
+            {
+                "Total_cycles" : 360,
+                "N_Times_conflicts" : 0,
+                "N_Conflicts_Average" : 0,
+                "N_sends" : 116,
+                "n_inputs_receive" : [
+                    0,
+                    116
+                ]
+                ,"input_fifos_stats" : [
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    {
+                        "N_pops" : 116,
+                        "N_pushes" : 116,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    }
+                ]
+            },
+            {
+                "Total_cycles" : 360,
+                "N_Times_conflicts" : 0,
+                "N_Conflicts_Average" : 0,
+                "N_sends" : 12,
+                "n_inputs_receive" : [
+                    0,
+                    12
+                ]
+                ,"input_fifos_stats" : [
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    {
+                        "N_pops" : 12,
+                        "N_pushes" : 12,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    }
+                ]
+            },
+            {
+                "Total_cycles" : 360,
+                "N_Times_conflicts" : 0,
+                "N_Conflicts_Average" : 0,
+                "N_sends" : 0,
+                "n_inputs_receive" : [
+                    0,
+                    0
+                ]
+                ,"input_fifos_stats" : [
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                ]
+            },
+            {
+                "Total_cycles" : 360,
+                "N_Times_conflicts" : 0,
+                "N_Conflicts_Average" : 0,
+                "N_sends" : 4,
+                "n_inputs_receive" : [
+                    0,
+                    4
+                ]
+                ,"input_fifos_stats" : [
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    {
+                        "N_pops" : 4,
+                        "N_pushes" : 4,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 1
+                    }
+                ]
+            },
+            {
+                "Total_cycles" : 360,
+                "N_Times_conflicts" : 0,
+                "N_Conflicts_Average" : 0,
+                "N_sends" : 0,
+                "n_inputs_receive" : [
+                    0,
+                    0
+                ]
+                ,"input_fifos_stats" : [
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                ]
+            },
+            {
+                "Total_cycles" : 360,
+                "N_Times_conflicts" : 0,
+                "N_Conflicts_Average" : 0,
+                "N_sends" : 0,
+                "n_inputs_receive" : [
+                    0,
+                    0
+                ]
+                ,"input_fifos_stats" : [
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    },
+                    {
+                        "N_pops" : 0,
+                        "N_pushes" : 0,
+                        "N_fronts" : 0,
+                        "Max_occupancy" : 0
+                    }
+                ]
+            }
+        ]
+    }
+}
